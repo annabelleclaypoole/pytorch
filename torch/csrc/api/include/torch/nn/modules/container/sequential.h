@@ -385,7 +385,7 @@ class Sequential : public torch::nn::ModuleHolder<SequentialImpl> {
   /// `Sequential sequential({{"m1", M(1)}, {"m2", M(2)}})`
   Sequential(std::initializer_list<NamedAnyModule> named_modules)
       : ModuleHolder(
-            std::make_shared<SequentialImpl>(std::move(named_modules))) {}
+            std::make_shared<SequentialImpl>(named_modules)) {}
 };
 } // namespace nn
 } // namespace torch
